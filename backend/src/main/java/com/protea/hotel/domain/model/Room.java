@@ -12,6 +12,7 @@ public class Room {
 
     public Room(Long id, String roomNumber, RoomType type, double nightlyRate) {
         if (roomNumber == null || roomNumber.isBlank()) throw new IllegalArgumentException("Room number is required");
+        if (type == null) throw new IllegalArgumentException("Room type is required");
         if (nightlyRate <= 0) throw new IllegalArgumentException("Nightly rate must be positive");
         this.id = id;
         this.roomNumber = roomNumber;
