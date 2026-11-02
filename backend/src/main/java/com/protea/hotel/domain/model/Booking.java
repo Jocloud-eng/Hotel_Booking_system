@@ -56,4 +56,10 @@ public class Booking {
         status = BookingStatus.CANCELLED;
         room.markAvailable();
     }
+
+    public void complete() {
+        if (status != BookingStatus.CONFIRMED) throw new IllegalStateException("Only confirmed bookings can be completed");
+        status = BookingStatus.COMPLETED;
+    }
+    
 }
